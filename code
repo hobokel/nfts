@@ -1,0 +1,47 @@
+// create a variable to hold your NFT's
+const findNFTs = [];
+console.log("The data of students in university\n");
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+
+function mintNFT(name, Age, course_name, UID) {
+  const NFT = {
+    name: name,
+    Age: Age,
+    course_name: course_name,
+    UID: UID
+  };
+
+  findNFTs.push(NFT);
+  console.log("", name);
+}
+
+// This function will loop through the findNFTs array and print the metadata of each NFT
+function listNFTs() {
+  for (let i = 0; i < findNFTs.length; i++) {
+    console.log("\nName: " + findNFTs[i].name);
+    console.log("The age : " + findNFTs[i].Age);
+    console.log("course name: " + findNFTs[i].course_name);
+    console.log("Your UID: " + findNFTs[i].UID);
+   
+  }
+}
+
+// This function will return the total number of NFTs minted
+function getTotalSupply() {
+  return findNFTs.length;
+}
+
+// Call the functions to test
+mintNFT("Hobo", "23", "Law", "21bl16790");
+mintNFT("Leyla", "24", "computer science", "23cs16579");
+mintNFT("Sophia", "17", "Litereture", "23ler9087");
+mintNFT("Mage", "19", "civil engineering", "22cv10987");
+mintNFT("Swali", "22", "computer engineering", "22bcs12936");
+mintNFT("Magiciano", "17", "Law", "22bl1234");
+
+//printing the list by callingv the listNFTs() function
+listNFTs();
+console.log("\n Total Supply:", getTotalSupply());
